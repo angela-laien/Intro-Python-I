@@ -6,7 +6,7 @@
 
 # YOUR CODE HERE
 def f1(a,b):
-    print(a + b)
+    return a + b
 
 print(f1(1, 2))
 
@@ -16,10 +16,10 @@ print(f1(1, 2))
 
 # YOUR CODE HERE
 def f2(*args):
-    numList=[]
+    numSum = 0
     for num in args:
-        numList.append(num)
-    print(sum(numList))
+        numSum += num
+    return numSum
 
 print(f2(1))                    # Should print 1
 print(f2(1, 3))                 # Should print 4
@@ -38,7 +38,7 @@ print(f2(a[0], a[1], a[2], a[3]))    # Should print 22
 
 # YOUR CODE HERE
 def f3(num1, num2=1):
-    print(num1 + num2)
+    return num1 + num2
 
 print(f3(1, 2))  # Should print 3
 print(f3(8))     # Should print 9
@@ -74,4 +74,5 @@ d = {
 }
 
 # How do you have to modify the f4 call below to make this work?
-f4(a=d['monster'],b=d['hp'])
+# f4(a=d['monster'],b=d['hp'])
+f4(**(d))
